@@ -22,15 +22,19 @@ db = SQLAlchemy(app)
 #登录
 @app.route('/api/login/', methods=['POST'])
 def login():
-    if request.method == 'POST':
-        if valid_login(request.form['username'], request.form['password']):
-            user = User.query.filter(User.username == request.form['username']).first()
-            response={
-                'username': user.username,
-                'password': user.password
-            }
-            return jsonify(response)
-    return jsonify('fail')
+    if valid_login(request.form['username'], request.form['password']):
+        user = User.query.filter(User.username == request.form['username']).first()
+        print(type(user))
+        response={
+            'success': 1,
+            'username': user.username,
+            'password': user.password
+        }
+        return jsonify(response)
+    response={
+        'success': 0
+    }
+    return jsonify(response)
 
 @app.route('/api/logout/',methods=['GET'])
 def logout():

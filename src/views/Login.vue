@@ -57,23 +57,22 @@ export default {
 			let formData = new FormData();
 			formData.append('username', this.loginForm.username);
 			formData.append('password', this.loginForm.password);
-			
 			// - TODO: test response
 			let _this = this
 			this.$axios
 			.post(api.baseApi+'login/',formData)
 			.then(function (response) {
-				if (response.data.success) {
-					_this.$message({message: response.data.message,
+        console.log(response)
+				if (response.data.success==1) {
+					_this.$message({message: '登录成功',
 									type: 'success'})
-					
 					_this.$store.commit('login', {
-						name: response.data.detail.username,
+						name: response.data.username,
 					})
 					
 					_this.$router.push({path: '/'})
 				}else {
-					_this.$message({message: response.data.message,
+					_this.$message({message: '登录失败',
 									type: 'error'})
 				}
 			})
