@@ -3,7 +3,7 @@
       <div id = "LoginCard">
 
         <div id="title">
-            <span style="font-weight: bold;">Zha</span>  <span>Covid</span>
+            <span style="font-weight: bold;">Zha</span>  <span>DB</span>
         </div>
 
 
@@ -61,7 +61,7 @@ export default {
 			// - TODO: test response
 			let _this = this
 			this.$axios
-			.post(api.baseApi+'/user/login',formData)
+			.post(api.baseApi+'login/',formData)
 			.then(function (response) {
 				if (response.data.success) {
 					_this.$message({message: response.data.message,
@@ -69,10 +69,6 @@ export default {
 					
 					_this.$store.commit('login', {
 						name: response.data.detail.username,
-						type: response.data.detail.user_type,
-						affiliation: response.data.detail.affiliation,
-						id: response.data.detail.user_id,
-            show_sub: response.data.show_sub,
 					})
 					
 					_this.$router.push({path: '/'})

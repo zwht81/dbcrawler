@@ -1,5 +1,5 @@
 /* eslint-disable */
-const baseApi = 'https://durian-go-318509.df.r.appspot.com/api/v1'
+const baseApi = 'localhost:8123/api/'
 export default {
     baseApi,
 }
