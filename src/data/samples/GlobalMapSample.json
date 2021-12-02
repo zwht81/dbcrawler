@@ -1,0 +1,42 @@
+{
+    "cases": [
+        {
+            "name": "China",
+            "value": 123343
+        },
+        {
+            "name": "United States of America",
+            "value": 10020312
+        }
+    ],
+    "deaths": [
+        {
+            "name": "China",
+            "value": 1233
+        },
+        {
+            "name": "United States of America",
+            "value": 1001134
+        }
+    ],
+    "recovered": [
+        {
+            "name": "China",
+            "value": 90000
+        },
+        {
+            "name": "United States of America",
+            "value": 5000000
+        }
+    ],
+    "vaccine": [
+        {
+            "name": "China",
+            "value": 134131231
+        },
+        {
+            "name": "United States of America",
+            "value": 45435354
+        }
+    ]
+}

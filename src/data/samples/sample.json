@@ -1,0 +1,166 @@
+{
+    "cases": [
+        {
+            "date": "20/01/01",
+            "value": [
+                {
+                    "name": "China",
+                    "value": 123
+                },
+                {
+                    "name": "United States of America",
+                    "value": 100203
+                }
+            ]
+        },
+        {
+            "date": "20/01/02",
+            "value": [
+                {
+                    "name": "China",
+                    "value": 123
+                },
+                {
+                    "name": "United States of America",
+                    "value": 100203
+                }
+            ]
+        },
+        {
+            "date": "20/01/03",
+            "value": [
+                {
+                    "name": "China",
+                    "value": 123
+                },
+                {
+                    "name": "United States of America",
+                    "value": 100203
+                }
+            ]
+        }
+    ],
+    "deaths": [
+        {
+            "date": "20/01/01",
+            "value": [
+                {
+                    "name": "China",
+                    "value": 1233
+                },
+                {
+                    "name": "United States of America",
+                    "value": 10011
+                }
+            ]
+        },
+        {
+            "date": "20/01/02",
+            "value": [
+                {
+                    "name": "China",
+                    "value": 123
+                },
+                {
+                    "name": "United States of America",
+                    "value": 100203
+                }
+            ]
+        },
+        {
+            "date": "20/01/03",
+            "value": [
+                {
+                    "name": "China",
+                    "value": 123
+                },
+                {
+                    "name": "United States of America",
+                    "value": 100203
+                }
+            ]
+        }
+    ],
+    "recovered": [
+        {
+            "date": "20/01/01",
+            "value": [
+                {
+                    "name": "China",
+                    "value": 1233
+                },
+                {
+                    "name": "United States of America",
+                    "value": 10011
+                }
+            ]
+        },
+        {
+            "date": "20/01/02",
+            "value": [
+                {
+                    "name": "China",
+                    "value": 123
+                },
+                {
+                    "name": "United States of America",
+                    "value": 100203
+                }
+            ]
+        },
+        {
+            "date": "20/01/03",
+            "value": [
+                {
+                    "name": "China",
+                    "value": 123
+                },
+                {
+                    "name": "United States of America",
+                    "value": 100203
+                }
+            ]
+        }
+    ],
+    "vaccine": [
+        {
+            "date": "20/01/01",
+            "value": [
+                {
+                    "name": "China",
+                    "value": 1233
+                },
+                {
+                    "name": "United States of America",
+                    "value": 10011
+                }
+            ]
+        },
+        {
+            "date": "20/01/02",
+            "value": [
+                {
+                    "name": "China",
+                    "value": 123
+                },
+                {
+                    "name": "United States of America",
+                    "value": 100203
+                }
+            ]
+        },
+        {
+            "date": "20/01/03",
+            "value": [
+                {
+                    "name": "China",
+                    "value": 123
+                },
+                {
+                    "name": "United States of America",
+                    "value": 100203
+                }
+            ]
+        }
+    ]
+}

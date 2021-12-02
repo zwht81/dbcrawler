@@ -1,0 +1,86 @@
+{
+    "Global": {
+        "overview": {
+            "nowcases": {
+                "nownum": 1234123,
+                "newnum": 12341
+            },
+            "cases": {
+                "nownum": 4124,
+                "newnum": 12323144
+            },
+            "deaths": {
+                "nownum": 123,
+                "newnum": 41234
+            },
+            "recovered": {
+                "nownum": 124334,
+                "newnum": -123
+            },
+            "vaccine": {
+                "nownum": 123344,
+                "newnum": 34
+            }
+        },
+        "detailed": [
+            {
+                "name": "China",
+                "nowcases": 123343,
+                "cases": 123,
+                "deaths": 1233,
+                "recovered": 123,
+                "vaccine": 123123
+            },
+            {
+                "name": "United States of America",
+                "nowcases": 123343,
+                "cases": 123,
+                "deaths": 1233,
+                "recovered": 123,
+                "vaccine": 123123
+            }
+        ]
+    },
+    "China": {
+        "overview": {
+            "nowcases": {
+                "nownum": 1234,
+                "newnum": 1234
+            },
+            "cases": {
+                "nownum": 1234,
+                "newnum": 1234
+            },
+            "deaths": {
+                "nownum": 1234,
+                "newnum": 1234
+            },
+            "recovered": {
+                "nownum": 12344,
+                "newnum": -1234
+            },
+            "vaccine": {
+                "nownum": 1234,
+                "newnum": 1234
+            }
+        },
+        "detailed": [
+            {
+                "name": "Anhui",
+                "nowcases": 123343,
+                "cases": 123,
+                "deaths": 1233,
+                "recovered": 123,
+                "vaccine": 123123
+            },
+            {
+                "name": "Beijing",
+                "nowcases": 123343,
+                "cases": 123,
+                "deaths": 1233,
+                "recovered": 123,
+                "vaccine": 123123
+            }
+        ]
+    }
+}

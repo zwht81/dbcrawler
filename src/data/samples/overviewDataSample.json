@@ -1,0 +1,22 @@
+{
+    "nowcases":{
+        "nownum":123,
+        "newnum":123
+    },
+    "cases":{
+        "nownum":123,
+        "newnum":123
+    },
+    "deaths":{
+        "nownum":123,
+        "newnum":123
+    },
+    "recovered":{
+        "nownum":123,
+        "newnum":-123
+    },
+    "vaccine":{
+        "nownum":123,
+        "newnum":123
+    }
+}

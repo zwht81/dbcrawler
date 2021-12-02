@@ -1,0 +1,175 @@
+[
+    {
+        "date":"2021-07-10 00:00:00",
+        "overview":{
+            "nowcases": {
+                "nownum": 710,
+                "newnum": 7110
+            },
+            "cases": {
+                "nownum": 710,
+                "newnum": 145
+            },
+            "deaths": {
+                "nownum": 12312344,
+                "newnum": 132
+            },
+            "recovered": {
+                "nownum": 1231344,
+                "newnum": -343
+            },
+            "vaccine": {
+                "nownum": 123434,
+                "newnum": 124334
+            }
+        },
+        "detailed": [
+            {
+                "name": "海淀区",
+                "nowcases": 43,
+                "cases": 12443,
+                "deaths": 123343,
+                "recovered": 34,
+                "vaccine": 34
+            },
+            {
+                "name": "房山区",
+                "nowcases": 123343,
+                "cases": 123,
+                "deaths": 1233,
+                "recovered": 123,
+                "vaccine": 123123
+            }
+        ]
+    },
+    {
+        "date":"2021-07-09 00:00:00",
+        "overview":{
+            "nowcases": {
+                "nownum": 143234,
+                "newnum": 12434
+            },
+            "cases": {
+                "nownum": 12334,
+                "newnum": 12334
+            },
+            "deaths": {
+                "nownum": 121234,
+                "newnum": 1234143
+            },
+            "recovered": {
+                "nownum": 123244,
+                "newnum": -12134
+            },
+            "vaccine": {
+                "nownum": 1234,
+                "newnum": 1234
+            }
+        },
+        "detailed": [
+            {
+                "name": "海淀区",
+                "nowcases": 123343,
+                "cases": 123,
+                "deaths": 1233,
+                "recovered": 13423,
+                "vaccine": 12334123
+            },
+            {
+                "name": "房山区",
+                "nowcases": 12233343,
+                "cases": 123,
+                "deaths": 124133,
+                "recovered": 123,
+                "vaccine": 123123
+            }
+        ]
+    },
+    {
+        "date":"2021-07-08 00:00:00",
+        "overview":{
+            "nowcases": {
+                "nownum": 1234,
+                "newnum": 1234
+            },
+            "cases": {
+                "nownum": 1234,
+                "newnum": 1234
+            },
+            "deaths": {
+                "nownum": 1234,
+                "newnum": 1234
+            },
+            "recovered": {
+                "nownum": 12344,
+                "newnum": -1234
+            },
+            "vaccine": {
+                "nownum": 1234,
+                "newnum": 1234
+            }
+        },
+        "detailed": [
+            {
+                "name": "海淀区",
+                "nowcases": 123343,
+                "cases": 123,
+                "deaths": 1233,
+                "recovered": 123,
+                "vaccine": 123123
+            },
+            {
+                "name": "房山区",
+                "nowcases": 123343,
+                "cases": 123,
+                "deaths": 1233,
+                "recovered": 123,
+                "vaccine": 123123
+            }
+        ]
+    },
+    {
+        "date":"2021-07-07 00:00:00",
+        "overview":{
+            "nowcases": {
+                "nownum": 12334,
+                "newnum": 123434
+            },
+            "cases": {
+                "nownum": 12334,
+                "newnum": 123434
+            },
+            "deaths": {
+                "nownum": 1234,
+                "newnum": 123434
+            },
+            "recovered": {
+                "nownum": 12344,
+                "newnum": -123434
+            },
+            "vaccine": {
+                "nownum": 12334,
+                "newnum": 1234
+            }
+        },
+        "detailed": [
+            {
+                "name": "海淀区",
+                "nowcases": 123343,
+                "cases": 123,
+                "deaths": 123343,
+                "recovered": 123,
+                "vaccine": 12343123
+            },
+            {
+                "name": "房山区",
+                "nowcases": 123343,
+                "cases": 123,
+                "deaths": 1233,
+                "recovered": 1123,
+                "vaccine": 1233123
+            }
+        ]
+    }
+    
+]
