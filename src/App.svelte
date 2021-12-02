@@ -1,10 +1,16 @@
 <script>
 	export let name;
+
+	let username='';
+	let password='';
+
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<input bind:value={username}>
+	<input type="password" bind:value={password}>
+	<p>Hello {username} {password}!</p>
 </main>
 
 <style>
