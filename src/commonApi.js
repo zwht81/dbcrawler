@@ -1,5 +1,5 @@
 /* eslint-disable */
-const baseApi = 'localhost:8123/api/'
+const baseApi = 'http://localhost:8123/api/'
 export default {
     baseApi,
 }
