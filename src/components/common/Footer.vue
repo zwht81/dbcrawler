@@ -1,7 +1,7 @@
 <template>
     <div class="gcs-footer">
         <div class="footer-top">
-            <b>Durian</b> Covid
+            数据库课程大作业
         </div>
     </div>
 </template>

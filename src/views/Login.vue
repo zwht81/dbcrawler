@@ -3,7 +3,7 @@
       <div id = "LoginCard">
 
         <div id="title">
-            <span style="font-weight: bold;">Durian</span>  <span>Covid</span>
+            <span style="font-weight: bold;">Zha</span>  <span>Covid</span>
         </div>
 
 

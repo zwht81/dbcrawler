@@ -2,7 +2,7 @@
   <div id="nav_bar">
     <div class="nav_bar_frame">
       <div class="nav_bar_icon" @click="backtostartpage">
-        <div class="nav_bar_icon_title_bold">Durian</div>
+        <div class="nav_bar_icon_title_bold">Zha</div>
         <div class="nav_bar_icon_title"> Covid</div>
       </div>
 
@@ -46,14 +46,14 @@ export default {
   data() {
     return {
       pages: [
-        {
-          title:"国内疫情",
-          url:"/chinaanalysis"
-        },
-        {
-          title:"国际疫情",
-          url:"/globalanalysis"
-        },
+        // {
+        //   title:"国内疫情",
+        //   url:"/chinaanalysis"
+        // },
+        // {
+        //   title:"国际疫情",
+        //   url:"/globalanalysis"
+        // },
         {
           title:"新闻",
           url: "/news",
@@ -66,18 +66,18 @@ export default {
           title:"问答",
           url: "/question",
         },
-        {
-          title:"行程",
-          url: "/travel",
-        },
+        // {
+        //   title:"行程",
+        //   url: "/travel",
+        // },
         {
           title:"订阅",
           url: "/subscribe",
         },
-        {
-          title:"预测",
-          url: "/forecast",
-        },
+        // {
+        //   title:"预测",
+        //   url: "/forecast",
+        // },
         {
           title:"关于",
           url: "/about",
