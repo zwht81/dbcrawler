@@ -51,7 +51,7 @@
         <h1>爬虫信息</h1>
 
         <p style="color: grey; margin-bottom: 45px">
-          共{{ this.knowledge_list_show.length }}条爬虫信息
+          共{{ this.knowledge_length }}条爬虫信息
         </p>
 
         <v-card>
@@ -93,6 +93,7 @@ export default {
   name: "KnowledgeList",
   data() {
     return {
+      knowledge_length: 0,
       knowledge_list: [],
       rumor_list: [],
       currentPage_1: 1,
@@ -106,9 +107,9 @@ export default {
           text: "经营范围",
           align: "start",
           sortable: false,
-          value: "knowledge_title",
+          value: "jyfw",
         },
-        { text: "城市", value: "knowledge_city" },
+        { text: "城市", value: "jycs" },
         // { text: "Fat (g)", value: "fat" },
         // { text: "Carbs (g)", value: "carbs" },
         // { text: "Protein (g)", value: "protein" },
@@ -152,10 +153,12 @@ export default {
       this.$axios
         .get(api.baseApi + "list_all_knowledge/", formData, config)
         .then(function (response) {
-          console.log(response.status);
+          // console.log(response.status);
           if (response.status == 200) {
             // console.log((response))
             _this.knowledge_list = response.data.data;
+            _this.knowledge_length = _this.knowledge_list.length
+            console.log(_this.knowledge_list)
           } else {
             console.log("请求失败");
             // console.log(response.data);
@@ -200,7 +203,7 @@ export default {
     },
   },
   mounted: function () {
-    this.getAllRumors();
+    // this.getAllRumors();
     this.getAllKnowledge();
   },
 };
