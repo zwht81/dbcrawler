@@ -77,6 +77,18 @@ def list_all_knowledge():
         response['data'].append(tmp)
     return jsonify(response)
 
+# 根据ID查询某个爬虫信息
+@app.route('/api/list_single_knowledge/', methods=['GET'])
+def list_all_knowledge():
+    k = Knowledge.query.filter(Knowledge.tyshxydm == request.form['kid']).first()
+    response={}
+    response['success'] = 1
+    response['data'] = {}
+    response['data']['jyfw'] = k.jyfw
+    response['data']['tyshxydm'] = k.tyshxydm
+    
+    response['data']['kid'] = k.tyshxydm
+    return jsonify(response)
 
 if __name__ == '__main__':
     app.run(debug = True, port = 8123)

@@ -158,7 +158,7 @@ export default {
             // console.log((response))
             _this.knowledge_list = response.data.data;
             _this.knowledge_length = _this.knowledge_list.length
-            console.log(_this.knowledge_list)
+            // console.log(_this.knowledge_list)
           } else {
             console.log("请求失败");
             // console.log(response.data);
