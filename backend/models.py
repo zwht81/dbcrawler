@@ -26,7 +26,7 @@ class Knowledge(db.Model):
     yyzt = db.Column(db.String(255))
     clrq = db.Column(db.String(255))
     qymc = db.Column(db.String(255))
-    zczb = db.Column(db.Double())
+    zczb = db.Column(db.Float())
     djjgdh = db.Column(db.String(255))
     jycs = db.Column(db.String(255))
     zch = db.Column(db.String(255))
