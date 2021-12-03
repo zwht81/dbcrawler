@@ -3,7 +3,7 @@
       <div id = "LoginCard">
 
         <div id="title">
-            <span style="font-weight: bold;">Zha</span>  <span>DB</span>
+            <span style="font-weight: bold;">Database</span>  <span>DB</span>
         </div>
 
 

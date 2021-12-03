@@ -1,16 +1,6 @@
 <template>
   <div class="subscribe_root">
     <span class="title">
-      <b style="margin-right: 10px">Covid</b> Subscriptions
-
-      <el-input
-        placeholder="Search"
-        v-model="search"
-        style="margin-left: 250px; width: 300px"
-        v-if="isLogined"
-      >
-        <i slot="prefix" class="el-input__icon el-icon-search"></i>
-      </el-input>
     </span>
 
     <el-divider />
@@ -19,7 +9,7 @@
       type="danger"
       v-if="!isLogined"
       style="font-weight: bold; font-size: 15px"
-      >请先登录!</el-tag
+      >请管理员登录!</el-tag
     >
 
     <v-app style="height: 20px" v-if="isLogined">
@@ -29,154 +19,62 @@
         dark
         @click="dialogTableVisible = true"
         width="200px"
+        height="100px"
       >
         <v-icon left> mdi-pencil </v-icon>
-        更新我的订阅城市
+        开始爬新数据！
       </v-btn>
     </v-app>
 
     <div class="homeMain" v-if="isLogined">
-      <el-dialog title="订阅的城市" :visible.sync="dialogTableVisible">
-        <el-table :data="cityList" style="width: 100%">
-          <el-table-column label="订阅城市" prop="name"> </el-table-column>
-          <el-table-column align="right">
-            <template slot-scope="scope">
-              <el-button
-                size="mini"
-                type="danger"
-                @click="handleDelete(scope.$index, scope.row)"
-                >取消订阅</el-button
-              >
-            </template>
-          </el-table-column>
-        </el-table>
-        <el-select
-          v-model="value"
-          filterable
-          placeholder="请选择"
-          style="margin-right: 8px"
+      <el-dialog title="爬新的数据" :visible.sync="dialogTableVisible">
+
+      <!-- 地址 -->
+      <div class="inputSection">
+          <div style="font-size: 14px; padding: 5px;">爬虫URL地址</div>
+          <el-input v-model="loginForm.url" placeholder="URL">
+              <i slot="prefix" class="el-input__icon el-icon-user" style="font-size: 17px;"></i>
+          </el-input >
+      </div>
+
+      <div class="inputSection">
+          <div style="font-size: 14px; padding: 5px;">接口类型</div>
+          <el-input v-model="loginForm.method" placeholder="GET">
+              <i slot="prefix" class="el-input__icon el-icon-user" style="font-size: 17px;"></i>
+          </el-input >
+      </div>
+      <div class="question_panel">
+        <div style="font-size: 14px; padding: 5px;">传值</div>
+        <el-input
+          type="textarea"
+          :autosize="{ minRows: 8, maxRows: 20 }"
+          placeholder="请输入接口需要传入的内容"
+          v-model="loginForm.in"
         >
-          <!-- <el-option
-            v-for="item in options"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-            :disabled="item.disabled"
-          >
-          </el-option> -->
-          <el-option-group
-            v-for="group in options"
-            :key="group.label"
-            :label="group.label"
-          >
-            <el-option
-              v-for="item in group.options"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            >
-            </el-option>
-          </el-option-group>
-        </el-select>
+        </el-input>
+      </div>
+
         <el-button
           type="primary"
           icon="el-icon-search"
           style="margin-top: 15px"
           @click="subCity"
-          >订阅</el-button
+          >开始！</el-button
         >
       </el-dialog>
-      <div class="cityList">
-        <div
-          class="homeSection"
-          v-for="(city, index) in cityList_show"
-          v-bind:key="index"
-        >
-          <div class="homeHeader">
-            <div class="region">
-              {{ city.name }}
-            </div>
-            <div style="display: flex; align-items: center">
-              <svg
-                width="35px"
-                height="35px"
-                style="transform: rotate(90deg)"
-                viewBox="0 0 1000 1000"
-              >
-                <path
-                  fill="#666666"
-                  d="M796.014 412.647l-257.492-257.492c-20.11-20.11-52.709-20.11-72.819 0l-257.492 257.492c-20.11 20.11-20.11 52.709 0 72.819s52.709 20.11 72.819 0l169.585-169.585v493.664c0 28.453 23.046 51.499 51.499 51.499s51.499-23.046 51.499-51.499v-493.664l169.585 169.585c10.042 10.043 23.226 15.089 36.41 15.089s26.367-5.021 36.41-15.089c20.11-20.11 20.11-52.709 0-72.819z"
-                />
-              </svg>
-              <div
-                style="
-                  font-size: 20px;
-                  font-weight: 700;
-                  color: #666666;
-                  margin-left: 5px;
-                  cursor: pointer;
-                "
-              >
-                <div @click="clickevent(city.name)">Learn more...</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="homeOverview">
-            <LittleDataCard
-              :nownum="city.cases"
-              :newnum="city.newcases"
-              type="确诊"
-              color="#AC3500"
-            />
-
-            <LittleDataCard
-              :nownum="city.deaths"
-              :newnum="city.newdeaths"
-              type="死亡"
-              color="black"
-            />
-
-            <LittleDataCard
-              :nownum="city.recovered"
-              :newnum="city.newrecovered"
-              type="治愈"
-              color="#00ACA5"
-            />
-
-            <!-- <LittleDataCard
-                :nownum="city.vaccine"
-                :newnum="city.newvaccine"
-                type="疫苗"
-                color="#00ACA5"
-              /> -->
-          </div>
+ 
         </div>
       </div>
 
-      <div style="margin-left: 20px; margin-top: 50px" v-if="isLogined">
-        <v-card class="mx-auto" color="rgb(230, 162, 60)" dark max-width="400">
-          <v-card-title>
-            <v-icon large left> mdi-bell </v-icon>
-            <span class="text-h6 font-weight-light">Update</span>
-          </v-card-title>
-
-          <v-card-text v-for='(infor, index) in information' :key="index" style="font-weight: bold; font-size: 20px">
-            {{ infor }}
-          </v-card-text>
-        </v-card>
-      </div>
-    </div>
-  </div>
 </template>
 <script>
-import LittleDataCard from "../components/common/LittleDataCard";
+// import LittleDataCard from "../components/common/LittleDataCard";
 import axios from "axios";
 import api from "../commonApi.js";
 export default {
   name: "Subscribe",
   components: {
-    LittleDataCard,
+    // LittleDataCard,
   },
   computed: {
     cityList_show() {
@@ -185,11 +83,22 @@ export default {
       );
     },
     isLogined() {
-      return this.$store.getters.userState.isLogined;
+      if (
+        this.$store.getters.userState.isLogined &&
+        this.$store.getters.userState.type == 1
+      ) {
+        return 1;
+      }
+      return 0;
     },
   },
   data() {
     return {
+      loginForm: {
+        url: "http://10.46.159.39:8080/api/v0/writefileflag/readfile",
+        method: "GET",
+        in: '{"id":31,"fileName":"2021-12-01Num899506.txt","userId":"acavfad0sdwd","taskId":30}',
+      },
       dialogTableVisible: false,
       cityList: [],
       search: "",
@@ -234,10 +143,10 @@ export default {
         {
           label: "热门城市",
           options: [
-            { value: "云南省", label: "云南省" },
+            { value: "深圳市", label: "深圳市" },
             { value: "北京市", label: "北京市" },
             { value: "上海市", label: "上海市" },
-            { value: "广东省", label: "广东省" },
+            { value: "海南市", label: "海南市" },
           ],
         },
         {
@@ -396,50 +305,15 @@ export default {
     subCity() {
       var _this = this;
       // console.log(this.value);
-      let formData = new FormData();
-      formData.append("name", _this.value);
-      formData.append("user_id", this.$store.getters.userState.id);
-      let config = {
-        headers: { "Content-Type": "multipart/form-data" },
-      };
-      var is_success = true;
-      var len_city = _this.cityList.length;
 
-      if (_this.value == "") {
-        _this.$message({
-          message: "您尚未订阅，请先选择一项订阅城市",
-          type: "false",
-        });
-        is_success = false;
-      }
 
-      if (is_success == true) {
-        for (var i = 0; i < len_city; i++) {
-          if (_this.cityList[i].name == _this.value) {
-            _this.$message({ message: "已订阅该城市", type: "false" });
-            is_success = false;
-            break;
-          }
-        }
-      }
-
-      if (is_success == true) {
-        var tmp = {
-          name: _this.value,
-          user_id: this.$store.getters.userState.id,
-          disabled: true,
-        };
-        axios
-          .post(api.baseApi + "/sub/subscribe", formData, config)
-          .then(function (response) {
-            if (response.status == 200) {
-              _this.$message({ message: "成功订阅", type: "true" });
-              _this.cityList.push(tmp);
-            } else {
-              console.log("请求失败");
-            }
-          });
-      }
+      let data = '"JYFW": "一般经营范围：文化活动策划；展览展示策划；, "TYSHXYDM": "91440300MA5FL7HX16", "ZZJGDM": "MA5FL7HX1", "RECORDID": "8a8084546a5454c7016a6314907b3647", "BIZHONG": "156", "HZRQ": "2020-09-09", "YYZT": "1", "CLRQ": "2019-04-30", "QYMC": "深圳市恒河文化传媒有限公司", "ZCZB": 50.000000, "DJJGDH": "4403", "JYCS": "深圳市福田区沙头街道沙嘴社区沙嘴路 8 号红树华府 A、B、C、D 栋 A 栋 10 层1009", "ZCH": "440300206975310"'
+      _this.$message({
+        showClose: true,
+        message: data,
+        type: "success",
+        duration: 0,
+      });
     },
   },
 };

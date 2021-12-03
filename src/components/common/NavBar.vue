@@ -2,8 +2,8 @@
   <div id="nav_bar">
     <div class="nav_bar_frame">
       <div class="nav_bar_icon" @click="backtostartpage">
-        <div class="nav_bar_icon_title_bold">Zha</div>
-        <div class="nav_bar_icon_title"> Covid</div>
+        <div class="nav_bar_icon_title_bold">Database</div>
+        <div class="nav_bar_icon_title"> 数据库</div>
       </div>
 
       <div class="nav_bar_item_outer_frame">
@@ -54,34 +54,34 @@ export default {
         //   title:"国际疫情",
         //   url:"/globalanalysis"
         // },
+        // {
+        //   title:"新闻",
+        //   url: "/news",
+        // },
         {
-          title:"新闻",
-          url: "/news",
-        },
-        {
-          title:"知识",
+          title:"数据",
           url: "/knowledge",
         },
-        {
-          title:"问答",
-          url: "/question",
-        },
+        // {
+        //   title:"问答",
+        //   url: "/question",
+        // },
         // {
         //   title:"行程",
         //   url: "/travel",
         // },
         {
-          title:"订阅",
+          title:"管理",
           url: "/subscribe",
-        },
+        }
         // {
         //   title:"预测",
         //   url: "/forecast",
         // },
-        {
-          title:"关于",
-          url: "/about",
-        }
+        // {
+        //   title:"关于",
+        //   url: "/about",
+        // }
       ],
     };
   },
