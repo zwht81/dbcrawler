@@ -68,6 +68,7 @@ export default {
 									type: 'success'})
 					_this.$store.commit('login', {
 						name: response.data.username,
+            type: response.data.usertype
 					})
 					
 					_this.$router.push({path: '/'})

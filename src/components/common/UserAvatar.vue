@@ -1,7 +1,7 @@
 <template>
 	<div>
 
-	<el-dialog center
+	<!-- <el-dialog center
 			title="更改您的个人信息"
 			:visible.sync="dialogVisible"
 			width="40%"
@@ -27,7 +27,7 @@
 				<el-button @click="dialogVisible = false">Cancel</el-button>
 				<el-button type="primary" @click="modify()">Confirm</el-button>
 			</span>
-	</el-dialog>
+	</el-dialog> -->
 
 	<div class='avatar' @mouseenter="mouseEnter()" @mouseleave="mouseLeave()">
 		<div style="white-space: nowrap; ">
@@ -56,10 +56,10 @@
 					<i class='el-icon-s-custom'></i>
 					{{userType}}
 				</b>
-				<span v-if="userState.type==1" class='userTag' style="background-color: #dace0a;">
+				<!-- <span v-if="userState.type==1" class='userTag' style="background-color: #dace0a;">
 					<i class='el-icon-school'></i>
 					{{userState.affiliation}}
-				</span>
+				</span> -->
 			</div>
 			
 		</div>
@@ -71,10 +71,10 @@
 				@click='unlogin()'
 				>退出登陆</el-button>
 				
-				<el-button type="primary" round plain
+				<!-- <el-button type="primary" round plain
 				size="medium"
 				@click='dialogVisible = true'
-				>修改信息</el-button>
+				>修改信息</el-button> -->
 			</div>
 		</div>
 	</div>
@@ -104,7 +104,7 @@ export default {
 			return this.userState.isLogined
 		},
 		userType() {
-			return this.userState.type=='0' ? '普通用户' : '认证机构用户'
+			return this.userState.type=='0' ? '普通用户' : '管理员用户'
 		}
 	},
 	methods: {

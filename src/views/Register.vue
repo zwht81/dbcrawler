@@ -49,6 +49,60 @@
         </el-input>
       </div>
 
+      <!-- 用户信息 -->
+      <!-- <div class="inputSection">
+        <div style="font-size: 14px; padding: 5px">个人信息</div>
+        <el-input v-model="RegisterForm.user_info" placeholder="UserInfo">
+          <i
+            slot="prefix"
+            class="el-input__icon el-icon-user"
+            style="font-size: 17px"
+          ></i>
+        </el-input>
+      </div> -->
+
+      <!-- 用户类型 -->
+      <div class="inputSection">
+        <div style="font-size: 14px; padding: 5px">用户类型</div>
+        <div
+          style="
+            width: 270px;
+            white-space: nowrap;
+            display: flex;
+            justify-content: space-between;
+          "
+        >
+          <el-radio
+            :change="change()"
+            v-model="RegisterForm.userType"
+            label="普通用户"
+            border
+            style="background-color: white; margin: 0px"
+          ></el-radio>
+          <el-radio
+            v-model="RegisterForm.userType"
+            label="管理员用户"
+            border
+            style="background-color: white; margin: 0px"
+          ></el-radio>
+        </div>
+      </div>
+
+      <!-- 认证机构 -->
+      <!-- <div
+        class="inputSection"
+        v-if="this.RegisterForm.userType == '管理员用户'"
+      >
+        <div style="font-size: 14px; padding: 5px">认证机构名</div>
+        <el-input v-model="RegisterForm.affiliation" placeholder="Affiliation">
+          <i
+            slot="prefix"
+            class="el-input__icon el-icon-office-building"
+            style="font-size: 17px"
+          ></i>
+        </el-input>
+      </div> -->
+
       <!-- 注册按钮 -->
       <div
         id="RegisterButton"
@@ -71,7 +125,8 @@ export default {
       RegisterForm: {
         username: "",
         password: "",
-        confirmation: ""
+        confirmation: "",
+        userType: "普通用户",
       },
     };
   },
@@ -96,7 +151,11 @@ export default {
         let formData = new FormData();
         formData.append("username", this.RegisterForm.username);
         formData.append("password", this.RegisterForm.password);
-
+        formData.append(
+          "usertype",
+          this.RegisterForm.userType == "普通用户" ? "0" : "1"
+        );
+        // - TODO: test response
         let _this = this;
         this.$axios
           .post(api.baseApi + "register/", formData)
@@ -109,7 +168,7 @@ export default {
 
               _this.$router.push({ path: "/login" });
             } else {
-              _this.$message({ message: "注册失败，已有该用户", type: "error" });
+              _this.$message({ message: "注册失败", type: "error" });
             }
           });
       }
@@ -132,7 +191,13 @@ export default {
         boxShadow: "0px 0px 10px 0px #b3b3b3",
       });
     },
-
+    change() {
+      if (this.RegisterForm.userType == "普通用户") {
+        this.$gsap.set("#RegisterCard", { height: "600px" });
+      } else if (this.RegisterForm.userType == "管理员用户") {
+        this.$gsap.set("#RegisterCard", { height: "600px" });
+      }
+    },
   },
 };
 </script>
@@ -166,7 +231,7 @@ export default {
   align-items: center;
 
   width: 350px;
-  height: 500px;
+  height: 600px;
 }
 
 #title {

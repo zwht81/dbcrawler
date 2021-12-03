@@ -28,11 +28,12 @@ def login():
         response={
             'success': 1,
             'username': user.username,
-            'password': user.password
+            'password': user.password,
+            'usertype': user.usertype
         }
         return jsonify(response)
     response={
-        'success': 0
+        'success': 0,
     }
     return jsonify(response)
 
@@ -52,7 +53,9 @@ def register():
             'success': 0
         }
         return jsonify(response)
-    new_user=User(username=request.form['username'], password=request.form['password'])
+    new_user=User(username=request.form['username'], password=request.form['password'], usertype=request.form['usertype'])
+    db.session.add(new_user)
+    db.session.commit()
     response={
         'success': 1
     }

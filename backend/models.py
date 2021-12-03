@@ -13,4 +13,5 @@ class User(db.Model):
     __tablename__='user'
     username = db.Column(db.String(255), primary_key=True)
     password = db.Column(db.String(255))
+    usertype = db.Column(db.Integer())
   
