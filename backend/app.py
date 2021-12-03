@@ -83,20 +83,27 @@ def list_single_knowledge():
     k = Knowledge.query.filter(Knowledge.tyshxydm == request.form['kid']).first()
     response={}
     response['success'] = 1
-    response['data'] = {}
-    response['data']['jyfw'] = k.jyfw
-    response['data']['tyshxydm'] = k.tyshxydm
-    response['data']['zzjgdm'] = k.zzjgdm
-    response['data']['recordid'] = k.recordid
-    response['data']['bizhong'] = k.bizhong
-    response['data']['hzrq'] = k.hzrq
-    response['data']['yyzt'] = k.yyzt
-    response['data']['clrq'] = k.clrq
-    response['data']['qymc'] = k.qymc
-    response['data']['zczb'] = k.zczb
-    response['data']['djjgdh'] = k.djjgdh
-    response['data']['jycs'] = k.jycs
-    response['data']['zch'] = k.zch
+    response['data'] = """
+    经营范围：{}\n
+    比重：{}\n
+    日期1：{}\n
+    日期2：{}\n
+    名称：{}\n
+    经营场所：{}\n
+    """.format(k.jyfw,k.bizhong,k.hzrq,k.clrq,k.qymc,k.jycs)
+    # response['data']['jyfw'] = k.jyfw
+    # response['data']['tyshxydm'] = k.tyshxydm
+    # response['data']['zzjgdm'] = k.zzjgdm
+    # response['data']['recordid'] = k.recordid
+    # response['data']['bizhong'] = k.bizhong
+    # response['data']['hzrq'] = k.hzrq
+    # response['data']['yyzt'] = k.yyzt
+    # response['data']['clrq'] = k.clrq
+    # response['data']['qymc'] = k.qymc
+    # response['data']['zczb'] = k.zczb
+    # response['data']['djjgdh'] = k.djjgdh
+    # response['data']['jycs'] = k.jycs
+    # response['data']['zch'] = k.zch
     return jsonify(response)
 
 if __name__ == '__main__':
