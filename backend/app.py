@@ -61,6 +61,21 @@ def register():
     }
     return jsonify(response)
 
+# 展示所有信息
+@app.route('/api/list_all_knowledge/', methods=['GET'])
+def list_all_knowledge():
+    all_knowledge = Knowledge.query.all()
+    response={}
+    response['success'] = 1
+    response['data'] = []
+    for k in all_knowledge:
+        tmp={}
+        tmp['jyfw'] = k.jyfw
+        tmp['jycs'] = k.jycs
+        response['data'].append(tmp)
+    return jsonify(response)
+
+
 if __name__ == '__main__':
     app.run(debug = True, port = 8123)
     
