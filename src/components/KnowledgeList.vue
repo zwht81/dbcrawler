@@ -1,7 +1,5 @@
 <template>
   <div class="main">
-    
-
     <div
       style="display: flex; justify-content: center; align-items: flex-start"
     >
@@ -157,7 +155,7 @@ export default {
           if (response.status == 200) {
             // console.log((response))
             _this.knowledge_list = response.data.data;
-            _this.knowledge_length = _this.knowledge_list.length
+            _this.knowledge_length = _this.knowledge_list.length;
             // console.log(_this.knowledge_list)
           } else {
             console.log("请求失败");
@@ -197,8 +195,44 @@ export default {
         });
     },
     handleClick(value) {
-      // console.log(value)
-      window.location.href = value.knowledge_link
+      console.log(value);
+      // window.location.href = value.knowledge_link
+
+      let formData = new FormData();
+      formData.append('kid', value.kid);
+      let config = {
+        headers: { "Content-Type": "multipart/form-data" },
+      };
+      var _this = this;
+      this.$axios
+        .post(api.baseApi + "list_single_knowledge/", formData, config)
+        .then(function (response) {
+          if (response.status == 200) {
+            console.log(response.data)
+            let s = response.data.data
+            // let data = ['导入成功条数：' + "1" + '条；',
+            // '导入失败条数：' + '2' + '条；',
+            // '导入失败原因：'+'3'];
+            let data = s.split('\n\n')
+            let newDatas = [];
+            const h = _this.$createElement;
+            for (let i in data) {
+                newDatas.push(h('p', null, data[i]));
+                newDatas.push(h('br', null, ''));
+            }
+            _this.$message({
+              showClose: true,
+              // message: response.data.data,
+              message: h('div', null, newDatas),
+              type: "success",
+              duration: 0,
+            });
+          } else {
+            console.log("请求失败");
+          }
+        });
+
+
       // this.viewDetails(value);
     },
   },
