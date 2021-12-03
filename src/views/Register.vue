@@ -71,10 +71,7 @@ export default {
       RegisterForm: {
         username: "",
         password: "",
-        confirmation: "",
-        user_info: "",
-        userType: "普通用户",
-        affiliation: "",
+        confirmation: ""
       },
     };
   },
@@ -102,17 +99,17 @@ export default {
 
         let _this = this;
         this.$axios
-          .post(api.baseApi + "/user/register", formData)
+          .post(api.baseApi + "register/", formData)
           .then(function (response) {
             if (response.data.success) {
               _this.$message({
-                message: response.data.message,
+                message: "注册成功",
                 type: "success",
               });
 
               _this.$router.push({ path: "/login" });
             } else {
-              _this.$message({ message: response.data.message, type: "error" });
+              _this.$message({ message: "注册失败，已有该用户", type: "error" });
             }
           });
       }

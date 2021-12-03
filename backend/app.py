@@ -38,19 +38,25 @@ def login():
 
 @app.route('/api/logout/',methods=['GET'])
 def logout():
-    content='success'
-    return jsonify(content)
+    response={
+        'success': 1
+    }
+    return jsonify(response)
 
 # 注册
 @app.route('/api/register/', methods=['POST'])
 def register():
-    if request.method == 'POST':
-        username = User.query.filter(User.username == request.form['username']).first()
-        if(username):
-            return jsonify('fail')
-        else:
-            new_user=User(id=id, username=request.form['username'], password=request.form['password'])
-    return jsonify('success')
+    username = User.query.filter(User.username == request.form['username']).first()
+    if(username):
+        response={
+            'success': 0
+        }
+        return jsonify(response)
+    new_user=User(username=request.form['username'], password=request.form['password'])
+    response={
+        'success': 1
+    }
+    return jsonify(response)
 
 if __name__ == '__main__':
     app.run(debug = True, port = 8123)
