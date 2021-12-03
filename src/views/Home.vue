@@ -3,6 +3,10 @@
     <div class="hometitle">
       <div class="titleText">数据库课程大作业</div>
     </div>
+    <div>
+      <img src="https://pic.rmb.bdstatic.com/22d0149798daed118d40b44957f04cf5.jpeg" height="700" width="100%" alt="主页"/>
+    </div>
+    
   </div>
 </template>
 
