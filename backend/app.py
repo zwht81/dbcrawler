@@ -70,8 +70,9 @@ def list_all_knowledge():
     response['data'] = []
     for k in all_knowledge:
         tmp={}
-        tmp['jyfw'] = k.jyfw
-        tmp['jycs'] = k.jycs
+        tmp['jyfw'] = k.jyfw[7:25]+'...'
+        tmp['jycs'] = k.jycs[0:8]+'...'
+        tmp['kid'] = k.tyshxydm
         response['data'].append(tmp)
     return jsonify(response)
 
