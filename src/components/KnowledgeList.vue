@@ -5,7 +5,7 @@
     <div
       style="display: flex; justify-content: center; align-items: flex-start"
     >
-      <v-app style="margin: 30px">
+      <!-- <v-app style="margin: 30px">
         
 
         <h1>辟谣专区</h1>
@@ -45,18 +45,18 @@
           circle
           color="cyan"
         ></v-pagination>
-      </v-app>
+      </v-app> -->
 
       <v-app style="margin: 30px">
-        <h1>防疫小知识</h1>
+        <h1>爬虫信息</h1>
 
         <p style="color: grey; margin-bottom: 45px">
-          共{{ this.knowledge_list_show.length }}条防疫小知识
+          共{{ this.knowledge_list_show.length }}条爬虫信息
         </p>
 
         <v-card>
           <v-card-title>
-            防疫小知识
+            爬虫信息
             <v-spacer></v-spacer>
             <v-text-field
               v-model="search_knowledge"
@@ -85,7 +85,7 @@
 
 <script>
 import api from "../commonApi.js";
-import RumorCard from "./common/RumorCard";
+// import RumorCard from "./common/RumorCard";
 // import QuestionCard from "./common/QuestionCard.vue";
 import moment from "moment";
 
@@ -103,12 +103,12 @@ export default {
       search_knowledge: "",
       headers: [
         {
-          text: "标题",
+          text: "经营范围",
           align: "start",
           sortable: false,
           value: "knowledge_title",
         },
-        { text: "日期", value: "knowledge_date" },
+        { text: "城市", value: "knowledge_city" },
         // { text: "Fat (g)", value: "fat" },
         // { text: "Carbs (g)", value: "carbs" },
         // { text: "Protein (g)", value: "protein" },
@@ -125,7 +125,7 @@ export default {
   props: ["title"],
   components: {
     // QuestionCard,
-    RumorCard,
+    // RumorCard,
   },
   computed: {
     knowledge_list_show() {
@@ -150,7 +150,7 @@ export default {
       };
       var _this = this;
       this.$axios
-        .get(api.baseApi + "/notice/list_all_knowledge", formData, config)
+        .get(api.baseApi + "list_all_knowledge/", formData, config)
         .then(function (response) {
           console.log(response.status);
           if (response.status == 200) {

@@ -14,4 +14,7 @@ class User(db.Model):
     username = db.Column(db.String(255), primary_key=True)
     password = db.Column(db.String(255))
     usertype = db.Column(db.Integer())
-  
+
+class Knowledge(db.Model):
+    __tablename__='knowledge'
+    jyfw = db.Column(db.String(255))

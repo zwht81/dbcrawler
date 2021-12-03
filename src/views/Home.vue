@@ -2,7 +2,6 @@
   <div class="homeRoot">
     <div class="hometitle">
       <div class="titleText">数据库课程大作业</div>
-
     </div>
   </div>
 </template>
