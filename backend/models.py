@@ -18,3 +18,16 @@ class User(db.Model):
 class Knowledge(db.Model):
     __tablename__='knowledge'
     jyfw = db.Column(db.String(255))
+    tyshxydm = db.Column(db.String(255), primary_key=True)
+    zzjgdm = db.Column(db.String(255))
+    recordid = db.Column(db.String(255))
+    bizhong = db.Column(db.String(255))
+    hzrq = db.Column(db.String(255))
+    yyzt = db.Column(db.String(255))
+    clrq = db.Column(db.String(255))
+    qymc = db.Column(db.String(255))
+    zczb = db.Column(db.Double())
+    djjgdh = db.Column(db.String(255))
+    jycs = db.Column(db.String(255))
+    zch = db.Column(db.String(255))
+
