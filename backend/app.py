@@ -78,16 +78,25 @@ def list_all_knowledge():
     return jsonify(response)
 
 # 根据ID查询某个爬虫信息
-@app.route('/api/list_single_knowledge/', methods=['GET'])
-def list_all_knowledge():
+@app.route('/api/list_single_knowledge/', methods=['POST'])
+def list_single_knowledge():
     k = Knowledge.query.filter(Knowledge.tyshxydm == request.form['kid']).first()
     response={}
     response['success'] = 1
     response['data'] = {}
     response['data']['jyfw'] = k.jyfw
     response['data']['tyshxydm'] = k.tyshxydm
-    
-    response['data']['kid'] = k.tyshxydm
+    response['data']['zzjgdm'] = k.zzjgdm
+    response['data']['recordid'] = k.recordid
+    response['data']['bizhong'] = k.bizhong
+    response['data']['hzrq'] = k.hzrq
+    response['data']['yyzt'] = k.yyzt
+    response['data']['clrq'] = k.clrq
+    response['data']['qymc'] = k.qymc
+    response['data']['zczb'] = k.zczb
+    response['data']['djjgdh'] = k.djjgdh
+    response['data']['jycs'] = k.jycs
+    response['data']['zch'] = k.zch
     return jsonify(response)
 
 if __name__ == '__main__':
